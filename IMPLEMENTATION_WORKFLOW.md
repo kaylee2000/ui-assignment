@@ -43,33 +43,7 @@ Acceptance Criteria:
 
 ---
 
-### Issue #2: Add Dummy Data for Metrics
-
-**Branch**: `feature/metrics-dummy-data`
-**Title**: Create dummy metrics data and display on Dashboard
-**Description**:
-
-```
-Add dummy metrics data to Dashboard page to test MetricCard components.
-
-Tasks:
-- [ ] Create dummy metrics data array in Dashboard.tsx
-- [ ] Render 4 MetricCard components with dummy data
-- [ ] Test responsive grid layout (1/2/4 columns)
-- [ ] Verify all metric cards display correctly
-- [ ] Test with different screen sizes
-
-Acceptance Criteria:
-- 4 metric cards display with dummy data
-- Cards show in responsive grid layout
-- All icons and change indicators work
-- Layout is responsive on mobile/tablet/desktop
-- No TypeScript errors
-```
-
----
-
-### Issue #3: Build LineChart Component with Recharts and Types
+### Issue #2: Build LineChart Component with Recharts and Types
 
 **Branch**: `feature/line-chart-recharts`
 **Title**: Install Recharts and create LineChart component with TypeScript interfaces
@@ -108,34 +82,7 @@ Acceptance Criteria:
 
 ---
 
-### Issue #4: Add Dummy Data for Chart
-
-**Branch**: `feature/chart-dummy-data`
-**Title**: Create dummy chart data and display on Dashboard
-**Description**:
-
-```
-Add dummy analytics data to Dashboard page to test LineChart component.
-
-Tasks:
-- [ ] Create dummy analytics data array in Dashboard.tsx
-- [ ] Render LineChart component with dummy data
-- [ ] Test chart responsiveness
-- [ ] Verify tooltips and interactions work
-- [ ] Test with different screen sizes
-
-Acceptance Criteria:
-- Chart displays with dummy data
-- Chart is responsive and fills container
-- Tooltips show on hover
-- Chart interactions work correctly
-- Layout is responsive on all screen sizes
-- No TypeScript errors
-```
-
----
-
-### Issue #5: Create Custom Hooks and Connect Dashboard to Real API Data
+### Issue #3: Create Custom Hooks and Connect Dashboard to Real API Data
 
 **Branch**: `feature/dashboard-api-integration`
 **Title**: Implement data fetching hooks and connect Dashboard to real API
