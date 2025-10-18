@@ -1,7 +1,39 @@
-import MetricCard from '../components/MetricCard';
-import LineChart from '../components/charts/LineChart';
+import ChartSection from '../components/ChartSection';
+import MetricsGrid from '../components/MetricsGrid';
 
 export default function Dashboard() {
+  // Temporary dummy data for metrics testing
+  const metricsData = [
+    {
+      title: 'Total Users',
+      value: 1240,
+      change: 12.5,
+      changeType: 'increase' as const,
+      icon: 'users' as const,
+    },
+    {
+      title: 'Active Sessions',
+      value: 89,
+      change: -3.2,
+      changeType: 'decrease' as const,
+      icon: 'activity' as const,
+    },
+    {
+      title: 'Revenue',
+      value: 24500,
+      change: 8.7,
+      changeType: 'increase' as const,
+      icon: 'dollar-sign' as const,
+    },
+    {
+      title: 'Conversion Rate',
+      value: 3.24,
+      change: 2.1,
+      changeType: 'increase' as const,
+      icon: 'trending-up' as const,
+    },
+  ];
+
   // Temporary dummy data for chart testing
   const chartData = [
     { id: '1', label: 'Jan', value: 400, date: '2024-01-01' },
@@ -21,45 +53,14 @@ export default function Dashboard() {
         If you can see this, the React app is working correctly.
       </p>
 
-      {/* Temporary MetricCard test - remove in Issue #3 */}
+      {/* Metrics Section */}
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">MetricCard Test</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <MetricCard
-            title="Total Users"
-            value={1240}
-            change={12.5}
-            changeType="increase"
-            icon="users"
-          />
-          <MetricCard
-            title="Active Sessions"
-            value={89}
-            change={-3.2}
-            changeType="decrease"
-            icon="activity"
-          />
-          <MetricCard
-            title="Revenue"
-            value={24500}
-            change={8.7}
-            changeType="increase"
-            icon="dollar-sign"
-          />
-          <MetricCard
-            title="Conversion Rate"
-            value={3.24}
-            change={2.1}
-            changeType="increase"
-            icon="trending-up"
-          />
-        </div>
+        <MetricsGrid metrics={metricsData} />
       </div>
 
-      {/* Temporary LineChart test - remove in Issue #3 */}
+      {/* Chart Section */}
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">LineChart Test</h2>
-        <LineChart data={chartData} title="Analytics Overview" />
+        <ChartSection data={chartData} title="Analytics Overview" />
       </div>
 
       <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">

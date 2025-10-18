@@ -7,14 +7,7 @@ import {
   Users,
 } from 'lucide-react';
 import React from 'react';
-
-interface MetricCardProps {
-  title: string;
-  value: number;
-  change: number;
-  changeType: 'increase' | 'decrease';
-  icon: 'users' | 'activity' | 'dollar-sign' | 'trending-up';
-}
+import { MetricCardProps } from '../types';
 
 // Icon mapping
 const iconMap = {
@@ -41,8 +34,8 @@ const formatChange = (change: number): string => {
   return `${sign}${change.toFixed(1)}%`;
 };
 
-const MetricCard: React.FC<MetricCardProps> = React.memo(
-  ({ title, value, change, changeType, icon }) => {
+const MetricCard = React.memo(
+  ({ title, value, change, changeType, icon }: MetricCardProps) => {
     const IconComponent = iconMap[icon];
     const isPositive = changeType === 'increase';
 
