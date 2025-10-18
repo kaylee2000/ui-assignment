@@ -18,6 +18,11 @@ export interface DashboardMetric {
   icon: 'users' | 'activity' | 'dollar-sign' | 'trending-up';
 }
 
+/**
+ * shared type for the MetricCard component and the MetricsGrid component
+ */
+export type MetricCardProps = Omit<DashboardMetric, 'id'>;
+
 export interface ChartData {
   id: string;
   label: string;
