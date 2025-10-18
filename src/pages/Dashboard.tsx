@@ -35,18 +35,6 @@ export default function Dashboard() {
       </div>
 
       <div className="mt-8">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Key Metrics</h2>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={refetchMetrics}
-            loading={metricsLoading}
-          >
-            Refresh
-          </Button>
-        </div>
-
         {metricsLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {Array.from({ length: 4 }).map((_, index) => (
@@ -60,25 +48,23 @@ export default function Dashboard() {
             className="mb-4"
           />
         ) : (
-          <MetricsGrid metrics={metricsData} />
+          <MetricsGrid
+            metrics={metricsData}
+            refreshButton={
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={refetchMetrics}
+                loading={metricsLoading}
+              >
+                Refresh
+              </Button>
+            }
+          />
         )}
       </div>
 
       <div className="mt-8">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">
-            Analytics Overview
-          </h2>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={refetchChart}
-            loading={chartLoading}
-          >
-            Refresh
-          </Button>
-        </div>
-
         {chartLoading ? (
           <AnalyticsSkeleton />
         ) : chartError ? (
@@ -88,7 +74,20 @@ export default function Dashboard() {
             className="mb-4"
           />
         ) : (
-          <ChartSection data={chartData} title="Analytics Overview" />
+          <ChartSection
+            data={chartData}
+            title="Analytics Overview"
+            refreshButton={
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={refetchChart}
+                loading={chartLoading}
+              >
+                Refresh
+              </Button>
+            }
+          />
         )}
       </div>
 
