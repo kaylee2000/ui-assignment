@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import React from 'react';
 
-export interface MetricCardProps {
+interface MetricCardProps {
   title: string;
   value: number;
   change: number;
